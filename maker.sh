@@ -1,15 +1,32 @@
 #!/bin/bash
+echo ""
+echo "team name : "
+read tm
+echo ""
+echo "localstart va start ro dari ? [y/n] "
+read yORn
 make
-rm -rf $1/
-mkdir $1/
-mkdir $1/lib
-cp /usr/local/StarerLibRCSC/lib/* $1/lib -r
-cp /src/* $1/ -r
-cd $1/
-rm *.cpp *.h
+rm -rf $tm/
+mkdir $tm/
+mkdir $tm/lib
+cp /usr/local/StarerLibRCSC/lib/* $tm/lib -r
+cp ./src/* $tm/ -r
+cd $tm/
+rm *.cpp *.h *.o
 cd ../
-tar -zcvf $1.tar.gz $1/
-rm -rf $1/
+if [ $yORn == "n" ] ; then
+    git clone https://github.com/SalehHamrahi/start-localstartAll.git 
+    mv ./start-localstartAll/start ./$tm/
+    mv ./start-localstartAll/localStartAll ./$tm/
+    rm -rf ./start-localstartAll/
+fi
+cd ./$tm/
+sed 's/std-base/'$tm'/g' ./start > ./q
+rm -rf ./start
+mv q start
+cd ..
+tar -zcvf $tm.tar.gz $tm/
+rm -rf $tm/
 mkdir binary/
-mv $1.tar.gz ./binary/
+mv $tm.tar.gz ./binary/
 mv ./binary ../
