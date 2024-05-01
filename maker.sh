@@ -3,7 +3,7 @@ echo ""
 echo "team name : "
 read tm
 echo ""
-echo "localstart va start ro dari ? [y/n] "
+echo "Do you have two start files and localstartall ? [y/n] "
 read yORn
 make
 rm -rf $tm/
