@@ -6,6 +6,7 @@ echo ""
 echo "Do you have two files start and localstartall ? [y/n] "
 read yORn
 make
+rm start localstartAll
 rm -rf $tm/
 mkdir $tm/
 mkdir $tm/lib
