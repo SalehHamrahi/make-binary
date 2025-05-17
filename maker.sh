@@ -14,7 +14,7 @@ cp ./src/* $tm/ -r
 cd $tm/
 rm *.cpp *.h *.o
 cd ../
-if [ $yORn == "n" ] ; then
+if [ $yORn == "n" | $yORn == "N" ] ; then
     git clone https://github.com/SalehHamrahi/start-localstartAll.git 
     mv ./start-localstartAll/start ./$tm/
     mv ./start-localstartAll/localStartAll ./$tm/
