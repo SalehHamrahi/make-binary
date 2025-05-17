@@ -28,6 +28,6 @@ mv q start
 cd ..
 tar -zcvf $tm.tar.gz $tm/
 rm -rf $tm/
-mkdir binary/
-mv $tm.tar.gz ./binary/
+mkdir ../binary/
+mv $tm.tar.gz ../binary/
 mv ./binary ../
